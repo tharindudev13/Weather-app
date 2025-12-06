@@ -24,7 +24,7 @@
   
 }
 
-.top{
+.top,.top-2{
   display: flex;
   height: 70%;
 }
@@ -36,6 +36,22 @@
 
 }
 
+.top-2{
+  gap: 30px;
+  padding-left: 20px;
+}
+
+.top-2 img{
+  height: 110px;
+  width: 120px;
+  margin: -10px;
+  margin-top: -25px;
+}
+
+.top-2 .right{
+  font-size: 0.9em;
+}
+
 
 
 
@@ -44,6 +60,16 @@
   display: grid;
   padding-bottom: 0px;
   font-size: 1.2em;
+}
+
+.bottom-2{
+  display: flex;
+  gap: 10px;
+  margin-top: -20px;
+  margin-left: -20px;
+  font-size: 0.9em;
+  padding: 5px;
+  
 }
 
 .city{
@@ -74,6 +100,13 @@
 .bottom p{
   padding-left: 30px;
   font-weight:500;
+  
+}
+
+.bottom-2 p{
+  padding-left: 30px;
+  font-weight:500;
+  font-size: 0.9em;
   
 }
 

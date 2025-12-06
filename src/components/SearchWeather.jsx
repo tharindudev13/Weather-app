@@ -5,33 +5,32 @@ import { useState } from 'react';
 function SearchWeather(){
 
     const weather = useLoaderData()
-    const [city,setCity] = useState("");
-    const getCity = (e) =>{
-        setCity(e.target.value)
 
-    }
+    
 
     return(
-        <div className='search-root'>
-        <div >
-            <input  className="search" id='srch' type="text" placeholder='Search for a city'
-            onChange={getCity} value={city}/>
-            <button  className="search">Search</button>
-        </div>
-        
+        <div> 
         <div className="container">
-            <div className="top">
-                <img src={weather.current.condition.icon} alt="live-weather"  />
+            <div className="top-2">
                     <div className='right'>
-                        <p className='city'>{weather.location.name}, {weather.location.country}</p>
-                        <p className='status'>{weather.current.condition.text}</p>
-                        <p className='temp'>{weather.current.temp_c} °C</p>
-                    </div>    
+                        <img src={Icon} alt="sun" />
+                        <p>Sunrise - <span className='details'>{weather.forecast.forecastday[0].astro.sunrise}</span> <br />
+                        Sunset&nbsp; - <span className='details'>{weather.forecast.forecastday[0].astro.sunset}</span></p>
+
+                    </div> 
+                    <div className='right'>
+                        <img src={Icon} alt="sun" />
+                        <p>Moonrise - <span className='details'>{weather.forecast.forecastday[0].astro.moonrise}</span> <br />
+                        Moonset&nbsp; - <span className='details'>{weather.forecast.forecastday[0].astro.moonset}</span></p>
+
+                    </div>     
             </div>
-            <div className="bottom">
-                <p>Wind Speed <br /> <span className='details'>{weather.current.wind_kph}kph</span></p>
-                <p>Humadity <br /><span className='details'>{weather.current.humidity}%</span></p>
-                <p>Feels Like <br /><span className='details'>{weather.current.feelslike_c }°C</span></p>
+            <div className="bottom-2">
+                <p>UV Index <br /> <span className='details'>{weather.current.uv} </span></p>
+                <p>Pressure <br /><span className='details'>{weather.current.pressure_mb} mb</span></p>
+                <p>Dew Point <br /><span className='details'>{weather.current.dewpoint_c }°C</span></p>
+                <p>Visibility <br /><span className='details'>{weather.current.vis_km } Km</span></p>
+
             </div>
         </div>
     </div>
@@ -41,10 +40,3 @@ function SearchWeather(){
 
 export default SearchWeather;
 
-export const searchWeatherLoader = async({params}) =>{
-    const {city} = params;
-    const API_KEY = 'c92318b13ab84c5899a82845250412';
-    const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=c92318b13ab84c5899a82845250412&q=${city}`);
-
-    return res.json();
-}

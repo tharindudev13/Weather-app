@@ -4,12 +4,13 @@ import { useLoaderData } from 'react-router-dom';
 function LiveWeather(){
 
     const weather = useLoaderData()
+    console.log(weather)
     
 
 
     return(
         <div className="container">
-            <div className="top">
+           <div className="top">
                 <img src={weather.current.condition.icon} alt="live-weather"  />
                     <div className='right'>
                         <p className='city'>{weather.location.name}, {weather.location.country}</p>
@@ -30,10 +31,9 @@ function LiveWeather(){
 export default LiveWeather;
 
 
-export const weatherLoader = async({params}) =>{
-    const {city} = params;
+export const weatherLoader = async() =>{
     const API_KEY = 'c92318b13ab84c5899a82845250412';
-    const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=c92318b13ab84c5899a82845250412&q=Colombo`);
+    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c92318b13ab84c5899a82845250412&q=Akuressa,LK`);
 
     return res.json();
 }
