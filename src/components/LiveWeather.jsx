@@ -18,6 +18,8 @@ import hrat from '../assets/animated/rainy-1.svg'
 import hrain from '../assets/animated/rainy-6.svg'
 import rthunder from '../assets/animated/thunder.svg'
 import snow from '../assets/animated/snowy-6.svg'
+import prn from '../assets/animated/rainy-3.svg'
+
 
 function LiveWeather(){
 
@@ -42,7 +44,8 @@ function LiveWeather(){
                    1192:hrat,
                    1195:hrain,
                    1276:rthunder,
-                   1066:snow
+                   1066:snow,
+                   1063:prn
                     }
     const code = weather.current.condition.code
 
@@ -81,7 +84,7 @@ export default LiveWeather;
 
 export const weatherLoader = async() =>{
     const API_KEY = 'c92318b13ab84c5899a82845250412';
-    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c92318b13ab84c5899a82845250412&q=Akuressa, Lk&days=6`);
+    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c92318b13ab84c5899a82845250412&q=Akuressa,LK&days=6`);
 
     if(!res.ok){
         return(<h1>Something went wrong!</h1>
