@@ -1,6 +1,8 @@
 import { useLoaderData } from 'react-router-dom';
-import Icon from '../assets/thunder.svg'
 import { useState } from 'react';
+import Moon from '../assets/animated/night.svg'
+import Sun from '../assets/animated/day.svg'
+
 
 function SearchWeather(){
 
@@ -13,13 +15,13 @@ function SearchWeather(){
         <div className="container">
             <div className="top-2">
                     <div className='right'>
-                        <img src={Icon} alt="sun" />
+                        <img src={Sun} alt="sun" />
                         <p>Sunrise - <span className='details'>{weather.forecast.forecastday[0].astro.sunrise}</span> <br />
                         Sunset&nbsp; - <span className='details'>{weather.forecast.forecastday[0].astro.sunset}</span></p>
 
                     </div> 
                     <div className='right'>
-                        <img src={Icon} alt="sun" />
+                        <img src={Moon} alt="moon" />
                         <p>Moonrise - <span className='details'>{weather.forecast.forecastday[0].astro.moonrise}</span> <br />
                         Moonset&nbsp; - <span className='details'>{weather.forecast.forecastday[0].astro.moonset}</span></p>
 

@@ -8,7 +8,6 @@ function Error(){
         <div>
             <h3>An error occured</h3>
             <p>{error.message}</p>
-            <button onClick={() => navigate('/')}>Back to Home Page</button>
         </div>
     )
 }

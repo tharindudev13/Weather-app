@@ -1,5 +1,6 @@
 import LiveWeather from "../components/LiveWeather"
-import SearchWeather from "../components/SearchWeather"
+import SearchWeather from "../components/Details"
+import Forecast from "../components/Forecast"
 
 
 function RootLayout(){
@@ -7,6 +8,7 @@ function RootLayout(){
         <div className="contents">
             <LiveWeather />
             <SearchWeather />
+            <Forecast />
 
         </div>
     )

@@ -1,5 +1,5 @@
 import LiveWeather, { weatherLoader } from './components/LiveWeather';
-import SearchWeather from './components/SearchWeather';
+import SearchWeather from './components/Details';
 import RootLayout from './layouts/RootLayout';
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 import Error from './components/Error';
