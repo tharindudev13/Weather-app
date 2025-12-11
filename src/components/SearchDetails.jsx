@@ -1,35 +1,39 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Moon from '../assets/animated/night.svg'
 import Sun from '../assets/animated/day.svg'
 import { AppContext } from './AppContext';
 
 
-function SearchWeather(){
+function SearchDetails(){
 
+    const weather = useLoaderData()
 
     const {setCity} = useContext(AppContext)
     const [searchText,setSearchText] = useState("")
     const navigate = useNavigate()
 
+   
     const handleSearch = () =>{
-       const value = searchText.trim();  // use current input directly
+         const value = searchText.trim();  // use current input directly
         if (value.length === 0) return;
 
         setCity(value);          // update context
         navigate(`/search/${value}`); 
         
+
+        
     }
 
-    const weather = useLoaderData()
+     
 
  
     return(
         <div> 
             <div className="search">
-                <input type="text" value={searchText} onChange={(e) =>{setSearchText(e.target.value)}} 
-                placeholder='Enter a city (ex:Matara, Lk)'/>
-                <button onClick={handleSearch}> Search </button>
+                <input type="text" value={searchText} onChange={(e) =>{setSearchText(e.target.value)}}
+                 placeholder='Enter a city (ex:Matara, Lk)'/>
+                <button onClick={handleSearch} > Search </button>
             </div>
         <div className="container">
             <div className="top-2">
@@ -59,5 +63,5 @@ function SearchWeather(){
 
 }
 
-export default SearchWeather;
+export default SearchDetails;
 

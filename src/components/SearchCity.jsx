@@ -1,4 +1,6 @@
-import { useLoaderData } from 'react-router-dom';
+import { useContext } from "react"
+import { AppContext } from "./AppContext"
+import { useLoaderData } from "react-router-dom"
 import pcloudy from '../assets/animated/cloudy-day-1.svg'
 import day from '../assets/animated/day.svg'
 import cloudy from "../assets/animated/cloudy.svg"
@@ -20,46 +22,42 @@ import rthunder from '../assets/animated/thunder.svg'
 import snow from '../assets/animated/snowy-6.svg'
 import prn from '../assets/animated/rainy-3.svg'
 
-
-function LiveWeather(){
-
+function SearchCity(){
     const weather = useLoaderData()
+    const {city} = useContext(AppContext)
 
-  
     const icons = {1000:day,
-                   1003:pcloudy,
-                   1006:cloudy,
-                   1009:overcast,
-                   1210:pls,
-                   1213:lsnow,
-                   1216:pms,
-                   1219:msnow,
-                   1222:phs,
-                   1225:hsnow,
-                   1153:ld,
-                   1150:pld,
-                   1180:plr,
-                   1183:lrain,
-                   1186:mrat,
-                   1192:hrat,
-                   1195:hrain,
-                   1276:rthunder,
-                   1066:snow,
-                   1063:prn
-                    }
-    const code = weather.current.condition.code
+                       1003:pcloudy,
+                       1006:cloudy,
+                       1009:overcast,
+                       1210:pls,
+                       1213:lsnow,
+                       1216:pms,
+                       1219:msnow,
+                       1222:phs,
+                       1225:hsnow,
+                       1153:ld,
+                       1150:pld,
+                       1180:plr,
+                       1183:lrain,
+                       1186:mrat,
+                       1192:hrat,
+                       1195:hrain,
+                       1276:rthunder,
+                       1066:snow,
+                       1063:prn
+                        }
+        const code = weather.current.condition.code
+    
+        let Icon = icons[code]
+    
+        if(Icon === undefined){
+            Icon = weather.current.condition.icon
+        }
+        
+        
 
-    let Icon = icons[code]
-
-    if(Icon === undefined){
-        Icon = weather.current.condition.icon
-    }
-    
-    
-
-    
-    
-    return(
+     return(
         <div className="container">
            <div className="top">
                 <img src={Icon} alt={weather.current.condition.text}  />
@@ -79,12 +77,13 @@ function LiveWeather(){
 
 }
 
-export default LiveWeather;
+export default SearchCity
 
+export const searchLoader = async({params}) =>{
 
-export const weatherLoader = async() =>{
+    const city = params.city    
     const API_KEY = 'c92318b13ab84c5899a82845250412';
-    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c92318b13ab84c5899a82845250412&q=Akuressa,LK&days=6`);
+    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c92318b13ab84c5899a82845250412&q=${city}&days=6`);
 
     if(!res.ok){
         return(<h1>Something went wrong!</h1>
