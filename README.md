@@ -29,63 +29,12 @@ A simple and responsive **Weather Application** built using **React.js** that al
 
 > Add screenshots of your app here
 
-```md
-![Weather App Screenshot](<img width="1920" height="916" alt="image" src="https://github.com/user-attachments/assets/e4aaaf34-7ad2-401f-a211-55e7361280d7" />)
-```
+
+![Weather App Screenshot](image.png)
+
 
 ---
 
-## ⚙️ Installation & Setup
-
-Follow these steps to run the project locally:
-
-1. **Clone the repository**
-
-   ```bash
-   git clone https://github.com/your-username/weather-app.git
-   ```
-
-2. **Navigate to the project folder**
-
-   ```bash
-   cd weather-app
-   ```
-
-3. **Install dependencies**
-
-   ```bash
-   npm install
-   ```
-
-4. **Create a `.env` file** (if using an API key)
-
-   ```env
-   REACT_APP_WEATHER_API_KEY=your_api_key_here
-   ```
-
-5. **Start the development server**
-
-   ```bash
-   npm start
-   ```
-
-The app will run on `http://localhost:3000` 🚀
-
----
-
-## 📂 Project Structure
-
-```
-weather-app/
-├── src/
-│   ├── components/
-│   ├── App.js
-│   ├── index.js
-│   └── styles/
-├── public/
-├── package.json
-└── README.md
-```
 
 ---
 
