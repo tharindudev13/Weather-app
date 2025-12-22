@@ -67,24 +67,24 @@ function Forecast(){
             Icon3 = weather.forecast.forecastday[2].day.condition.icon
         }
 
-        const code4 = weather.forecast.forecastday[3].day.condition.code    
-        let Icon4 = icons[code4]
-        if(Icon4 === undefined){
-            Icon4 = weather.forecast.forecastday[3].day.condition.icon
-        }
+        // const code4 = weather.forecast.forecastday[3].day.condition.code    
+        // let Icon4 = icons[code4]
+        // if(Icon4 === undefined){
+        //     Icon4 = weather.forecast.forecastday[3].day.condition.icon
+        // }
 
-        const code5 = weather.forecast.forecastday[4].day.condition.code 
-        console.log(code5)   
-        let Icon5 = icons[code5]
-        if(Icon5 === undefined){
-            Icon5 = weather.forecast.forecastday[4].day.condition.icon
-        }
+        // const code5 = weather.forecast.forecastday[4].day.condition.code 
+        // console.log(code5)   
+        // let Icon5 = icons[code5]
+        // if(Icon5 === undefined){
+        //     Icon5 = weather.forecast.forecastday[4].day.condition.icon
+        // }
 
-        const code6 = weather.forecast.forecastday[5].day.condition.code    
-        let Icon6 = icons[code6]
-        if(Icon6 === undefined){
-            Icon6 = weather.forecast.forecastday[5].day.condition.icon
-        }
+        // const code6 = weather.forecast.forecastday[5].day.condition.code    
+        // let Icon6 = icons[code6]
+        // if(Icon6 === undefined){
+        //     Icon6 = weather.forecast.forecastday[5].day.condition.icon
+        // }
 
 
     return(
@@ -107,22 +107,7 @@ function Forecast(){
                 </div>
 
                 
-                <div className="days">
-                    <img src={Icon4} alt="" />
-                    <p>{weather.forecast.forecastday[3].day.condition.text}</p>
-                </div>
-
                 
-                <div className="days">
-                    <img src={Icon5} alt="" />
-                    <p>{weather.forecast.forecastday[4].day.condition.text}</p>
-                </div>
-
-                
-                <div className="days">
-                    <img src={Icon6} alt="" />
-                    <p>{weather.forecast.forecastday[5].day.condition.text}</p>
-                </div>
             </div>
         </div>
     )
