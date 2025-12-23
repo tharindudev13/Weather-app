@@ -19,10 +19,7 @@ function SearchDetails(){
         if (value.length === 0) return;
 
         setCity(value);          // update context
-        navigate(`/search/${value}`); 
-        
-
-        
+        navigate(`/search/${value}`);    
     }
 
      

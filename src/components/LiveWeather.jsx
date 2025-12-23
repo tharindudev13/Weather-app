@@ -84,7 +84,7 @@ export default LiveWeather;
 
 export const weatherLoader = async() =>{
     const API_KEY = 'c92318b13ab84c5899a82845250412';
-    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=c92318b13ab84c5899a82845250412&q=Akuressa,LK&days=6`);
+    const res = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=f83f247f5fd4418ab3d70747251812&q=Akuressa,LK&days=6`);
 
     if(!res.ok){
         return(<h1>Something went wrong!</h1>
