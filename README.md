@@ -10,8 +10,7 @@ A simple and responsive **Weather Application** built using **React.js** that al
 * 🌡️ Display current temperature
 * ☁️ Weather condition (clear, cloudy, rain, etc.)
 * 💧 Humidity and wind speed
-* 🌅 Sunrise and 🌇 sunset times *(if implemented)*
-* 📱 Responsive UI
+* 🌅 Sunrise and 🌇 sunset times 
 * 🔄 Live data fetched from a weather API
 
 ---
@@ -27,13 +26,12 @@ A simple and responsive **Weather Application** built using **React.js** that al
 
 ## 📸 Screenshots
 
-> Add screenshots of your app here
 
 
 ![Weather App Screenshot](image.png)
 
 
----
+
 
 
 ---
